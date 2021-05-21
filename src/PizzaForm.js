@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const OrderForm = (props) => {
     const {
@@ -108,7 +107,7 @@ const OrderForm = (props) => {
                         type='checkbox'
                         name='pepperoni'
                         checked={values.pepperoni}
-                        onCHange={onChange}
+                        onChange={onChange}
                     />
                 </label>
 
@@ -117,7 +116,7 @@ const OrderForm = (props) => {
                         type='checkbox'
                         name='sausage'
                         checked={values.sausage}
-                        onCHange={onChange}
+                        onChange={onChange}
                     />
                 </label>
 
@@ -126,7 +125,7 @@ const OrderForm = (props) => {
                         type='checkbox'
                         name='peppers'
                         checked={values.peppers}
-                        onCHange={onChange}
+                        onChange={onChange}
                     />
                 </label>
 
@@ -135,7 +134,7 @@ const OrderForm = (props) => {
                         type='checkbox'
                         name='olives'
                         checked={values.olives}
-                        onCHange={onChange}
+                        onChange={onChange}
                     />
                 </label>
 
@@ -144,15 +143,14 @@ const OrderForm = (props) => {
                         type='checkbox'
                         name='shrooms'
                         checked={values.shrooms}
-                        onCHange={onChange}
+                        onChange={onChange}
                     />
                 </label>
             </div>
 
             <div id='special-text'>
                 <h4>Special Instructions</h4>
-
-                <label>Special Instructions
+                <label>
                     <input
                         value={values.instructions}
                         onChange={onChange}
@@ -164,7 +162,7 @@ const OrderForm = (props) => {
             </div>
 
             <div className='order-submit'>
-                <button disabled={disabled}>Place Order!</button>
+                <button id='order-button' disabled={disabled}>Add to Order!</button>
 
                 <div className='errors'>
                 <div>{errors.name}</div>
