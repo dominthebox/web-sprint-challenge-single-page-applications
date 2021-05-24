@@ -40,7 +40,7 @@ const App = () => {
   // Helpers
 
   const postNewOrder = newOrder => {
-    axios.post(/*what end point am I supposed to use here?*/ newOrder)
+    axios.post('https://reqres.in/api/orders', newOrder)
       .then(res => {
         setOrders([res.data, ...orders])
         console.log('receiving a successful response back', res.data)
@@ -92,7 +92,7 @@ const App = () => {
         <h1 className='lambdaEats-header'>Lambda Eats</h1>
         <div className='nav-links'>
           <Link to='/'>Home</Link>
-          <Link to='/pizza'>Order</Link>
+          <Link id='order-pizza' to='/pizza'>Order</Link>
           <Link to='/help'>Help</Link>
         </div>
       </nav>
