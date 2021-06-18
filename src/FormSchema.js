@@ -11,12 +11,13 @@ const formSchema = yup.object().shape({
         .oneOf(['small', 'medium', 'large'], 'Please select a pizza size'),
     sauce: yup
         .string()
-        .oneOf(['marinara', 'vodka', 'pesto', 'alfredo'], 'Please select a pizza sauce'),
+        .oneOf(['marinara', 'vodka', 'pesto', 'alfredo'], 'Please select a pizza sauce')
+        .required('Please select a pizza sauce'),   // can't figure out how to get the error message to show when a radio button is not selected?
     pepperoni: yup.boolean(),
     sausage: yup.boolean(),
     peppers: yup.boolean(),
     olives: yup.boolean(),
-    shrooms: yup.boolean(),
+    mushrooms: yup.boolean(),
     instructions: yup
         .string()
         .trim()

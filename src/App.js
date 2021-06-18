@@ -5,6 +5,7 @@ import axios from 'axios';
 import Home from './Home';
 import OrderForm from './PizzaForm';
 import schema from './FormSchema';
+import Confirmation from './ConfirmationPage';
 
 // Initial States
 const initialFormValues = {
@@ -20,7 +21,7 @@ const initialFormValues = {
   sausage: false,
   peppers: false,
   olives: false,
-  shrooms: false,
+  mushrooms: false,
 }
 const initialFormErrors = {
   name: '',
@@ -76,7 +77,8 @@ const App = () => {
       name: formValues.name.trim(),
       size: formValues.size.trim(),
       sauce: formValues.sauce.trim(),
-      toppings: ['pepperoni', 'sausage', 'peppers', 'olives', 'shrooms'].filter(toppings => formValues[toppings])
+      toppings: ['pepperoni', 'sausage', 'peppers', 'olives', 'mushrooms'].filter(toppings => formValues[toppings]),
+      instructions: formValues.instructions.trim()
     }
     postNewOrder(newOrder)  
   }
@@ -92,8 +94,10 @@ const App = () => {
         <h1 className='lambdaEats-header'>Lambda Eats</h1>
         <div className='nav-links'>
           <Link to='/'>Home</Link>
+          <br></br>
           <Link id='order-pizza' to='/pizza'>Order</Link>
-          <Link to='/help'>Help</Link>
+          <br></br>
+          <Link to='/confirmation'>Confirmation</Link>
         </div>
       </nav>
       <Switch>
@@ -107,6 +111,7 @@ const App = () => {
         errors={formErrors}
       />  
       </Route>
+      <Route path='/confirmation' component={Confirmation} />
       </Switch>
     </div>
   );

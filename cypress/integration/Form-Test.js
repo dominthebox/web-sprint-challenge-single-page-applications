@@ -10,7 +10,7 @@ describe('User App', () => {
     const checkboxInput2 = () => cy.get('input[name=sausage]')
     const checkboxInput3 = () => cy.get('input[name=peppers]')
     const checkboxInput4 = () => cy.get('input[name=olives]')
-    const checkboxInput5 = () => cy.get('input[name=shrooms]')
+    const checkboxInput5 = () => cy.get('input[name=mushrooms]')
     const specialInput = () => cy.get('input[name=instructions]')
     const submitBtn = () => cy.get('button[id=order-button]')
 

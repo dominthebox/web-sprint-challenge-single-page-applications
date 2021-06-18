@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const OrderForm = (props) => {
     const {
@@ -20,13 +21,21 @@ const OrderForm = (props) => {
         change(name, valueToUse)
     }
 
+    // helpers to route to confirmation page upon submitting order, can't figure out how to render the new order on the confirmation page so I'm commenting it out for now
+
+    // const history = useHistory()
+    // const routeToOrderConfirm = () => {
+    //     console.log('Submitting something to show navigation to confirmation page')
+    //     history.push('/confirmation')
+    // }
+
     return (
         <form id='pizza-form' onSubmit={onSubmit}>
 
-            <h2>Build Your Own Pizza</h2>
+            <h2>Build Your Own Pizza!</h2>
 
             <div>
-                <h2>Who's this for?</h2>
+                <h4>Who's this for?</h4>
                 <label>Name
                     <input id='name-input'
                         value={values.name}
@@ -66,7 +75,7 @@ const OrderForm = (props) => {
                         checked={values.sauce === 'marinara'}
                     />
                 </label>
-
+                <br></br>
                 <label>Alla Vodka
                     <input
                         type='radio'
@@ -76,7 +85,7 @@ const OrderForm = (props) => {
                         checked={values.sauce === 'vodka'}
                     />
                 </label>
-
+                <br></br>
                 <label>Pesto
                     <input
                         type='radio'
@@ -86,7 +95,7 @@ const OrderForm = (props) => {
                         checked={values.sauce === 'pesto'}
                     />
                 </label>
-
+                <br></br>
                 <label>Alfredo
                     <input
                         type='radio'
@@ -99,50 +108,54 @@ const OrderForm = (props) => {
             </div>
 
             <div className='toppings-checkboxes'>
-                <h4>Add Toppings</h4>
-                <h5>Choose up to 5</h5>
+                <h4>Add Toppings (choose up to 5)</h4>
 
                 <label>Pepperoni
                     <input
                         type='checkbox'
                         name='pepperoni'
+                        value='pepperoni'
                         checked={values.pepperoni}
                         onChange={onChange}
                     />
                 </label>
-
+                <br></br>
                 <label>Spicey Italian Sausage
                     <input
                         type='checkbox'
                         name='sausage'
+                        value='sausage'
                         checked={values.sausage}
                         onChange={onChange}
                     />
                 </label>
-
+                <br></br>
                 <label>Peppers & Onions
                     <input
                         type='checkbox'
                         name='peppers'
+                        value='peppers'
                         checked={values.peppers}
                         onChange={onChange}
                     />
                 </label>
-
+                <br></br>
                 <label>Black Olives
                     <input
                         type='checkbox'
                         name='olives'
+                        value='olives'
                         checked={values.olives}
                         onChange={onChange}
                     />
                 </label>
-
+                <br></br>
                 <label>Mushrooms
                     <input
                         type='checkbox'
-                        name='shrooms'
-                        checked={values.shrooms}
+                        name='mushrooms'
+                        value='mushrooms'
+                        checked={values.mushrooms}
                         onChange={onChange}
                     />
                 </label>
@@ -162,7 +175,11 @@ const OrderForm = (props) => {
             </div>
 
             <div className='order-submit'>
-                <button id='order-button' disabled={disabled}>Add to Order!</button>
+                <button 
+                    id='order-button' 
+                    disabled={disabled}
+                    // onClick={routeToOrderConfirm}
+                    >Add to Order!</button>
 
                 <div className='errors'>
                 <div>{errors.name}</div>

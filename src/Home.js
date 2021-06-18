@@ -5,7 +5,7 @@ const Home = () => {
     const history = useHistory()
 
     const routeToOrder = () => {
-        console.log('Submitting something to go to the next page')
+        console.log('Submitting something to show navigation to order form page')
         history.push('/pizza')
     }
 
