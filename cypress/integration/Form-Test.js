@@ -62,9 +62,9 @@ describe('User App', () => {
 
     describe('Submitting form data', () => {
         it('can submit form data', () => {
-            nameInput().type('Button test')
-            dropdownInput().type('small')
-            radioBtnInput().type('')
+            nameInput().type('SubmitTest')
+            dropdownInput().select('small')
+            radioBtnInput().check('marinara')
             checkboxInput().check()
             submitBtn().click()
         })
